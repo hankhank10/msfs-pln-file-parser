@@ -91,23 +91,6 @@ def simplify_route(source_dictionary):
     return output_dictionary
 
 
-def save_json_file(filename, source_dictionary):
-    with open(filename, 'w') as jsonfile:
+def save_json_file(output_filename, source_dictionary):
+    with open(output_filename, 'w') as jsonfile:
         json.dump(source_dictionary['SimBase.Document']['FlightPlan.FlightPlan'], jsonfile, indent=4)
-
-
-# Main loop
-
-filename = input ("Enter .PLN file name to parse> ")
-
-parsed_dictionary = parse_pln_file(filename)
-print(parsed_dictionary)
-
-input("Press key to tidy waypoint lat / lons into sensible format")
-
-fixed_dictionary = fix_waypoints(parsed_dictionary)
-print (fixed_dictionary)
-
-input("Press key to write the dictionary to JSON")
-
-save_json_file("output.json", fixed_dictionary)
