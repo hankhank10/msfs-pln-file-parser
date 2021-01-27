@@ -21,3 +21,6 @@ This simple script does a few things:
 
 
 It also includes an example.py to show how it works and a sample.pln file which you can use to test.
+
+Requirements:
+- (xmltodict)[https://pypi.org/project/xmltodict/]
